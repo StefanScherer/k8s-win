@@ -13,7 +13,7 @@ docker image tag mcr.microsoft.com/windows/nanoserver:1809 microsoft/nanoserver:
 # download the Kube binaries
 mkdir -p C:\k\logs
 cd C:\k
-$ProgressPreference=’SilentlyContinue’
+$ProgressPreference='SilentlyContinue'
 iwr -outf kubernetes-node-windows-amd64.tar.gz "https://dl.k8s.io/v$KUBERNETES_VERSION/kubernetes-node-windows-amd64.tar.gz"
 
 tar -xkf kubernetes-node-windows-amd64.tar.gz -C C:\k
@@ -27,7 +27,7 @@ $ClusterCIDR="10.244.0.0/16"
 $KubeDnsServiceIP="10.96.0.10"
 $ServiceCIDR="10.96.0.0/12"
 $InterfaceName="Ethernet"
-$LogDir="C:\k`logs"
+$LogDir="C:\k\logs"
 
 $BaseDir = "c:\k"
 $NetworkMode = $NetworkMode.ToLower()
